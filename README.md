@@ -5,8 +5,7 @@ Para rodar o projeto. Digite o seguinte comando:
 docker run
 ```
 
-Front-end estará disponivel na URL:
+Front-end estará disponivel na URL: http://localhost:4200
 
-A APi estará rodando na seguinte URL:
+A API estará rodando na seguinte URL: http://localhost:8080
 
-O Swagger estará disponivel na URL:
