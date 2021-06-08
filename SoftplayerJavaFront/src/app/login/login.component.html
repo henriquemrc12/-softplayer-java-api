@@ -1,0 +1,29 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <div class="fadeIn first"></div>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        id="login"
+        class="fadeIn second"
+        name="login"
+        placeholder="E-mail"
+        formControlName="email"
+      />
+      <input
+        type="text"
+        id="password"
+        class="fadeIn third"
+        name="login"
+        placeholder="Senha"
+        formControlName="password"
+      />
+      <input
+        type="submit"
+        [disabled]="formGroup.invalid"
+        class="fadeIn fourth"
+        value="Log In"
+      />
+    </form>
+  </div>
+</div>

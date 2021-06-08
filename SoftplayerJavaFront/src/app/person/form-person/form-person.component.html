@@ -1,0 +1,117 @@
+<div class="container-form">
+  <h2>{{ isEdit ? "Atualizar Pessoa" : "Criar Pessoa" }}</h2>
+  <form [formGroup]="formGroup" class="example-form">
+    <p>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Nome</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="name"
+          placeholder="Henrique"
+        />
+        <mat-error *ngIf="formGroup.controls.name.hasError('required')">
+          Nome é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          formControlName="email"
+          placeholder="Ex. pat@example.com"
+        />
+        <mat-error
+          *ngIf="
+            formGroup.controls.email.hasError('email') &&
+            !formGroup.controls.email.hasError('required')
+          "
+        >
+          E-mail inválido!
+        </mat-error>
+        <mat-error *ngIf="formGroup.controls.email.hasError('required')">
+          E-mail é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>CPF</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="cpf"
+          placeholder="321.123.321-96"
+          mask="000.000.000-00"
+        />
+        <mat-error *ngIf="formGroup.controls.cpf.hasError('required')">
+          CPF é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Sexo</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="gender"
+          placeholder="Feminino"
+        />
+        <mat-error *ngIf="formGroup.controls.gender.hasError('required')">
+          Sexo é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Nacionalidade</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="placeOfBirth"
+          placeholder="Brasileiro"
+        />
+        <mat-error *ngIf="formGroup.controls.placeOfBirth.hasError('required')">
+          Nacionalidade é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label></mat-label>
+
+        <mat-label>Data de nascimento</mat-label>
+        <input matInput formControlName="birthDate" [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <mat-error *ngIf="formGroup.controls.birthDate.hasError('required')">
+          Data de nascimento é <strong>obrigatório</strong>
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <hr />
+    <div class="text-center">
+      <button type="button" (click)="close()" class="btn btn-secondary m-3">
+        Cancelar
+      </button>
+      <button
+        type="button"
+        [disabled]="formGroup.invalid"
+        (click)="save()"
+        class="btn btn-primary m-3"
+      >
+        {{ isEdit ? "Atualizar" : "Salvar" }}
+      </button>
+    </div>
+  </form>
+</div>
