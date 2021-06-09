@@ -3,7 +3,7 @@ Para rodar o Backend. Digite os seguintes comandos:
 
 ```bash
 mvn install
-java -jar 
+java -jar SoftplayerJavaApi-0.0.1-SNAPSHOT.jar
 ```
 
 Para rodar o Frontend. Digite os seguintes comandos:
