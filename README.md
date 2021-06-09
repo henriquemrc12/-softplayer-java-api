@@ -1,8 +1,16 @@
 # softplayer-java
-Para rodar o projeto. Digite o seguinte comando:
+Para rodar o Backend. Digite os seguintes comandos:
 
 ```bash
-docker run
+mvn install
+java -jar 
+```
+
+Para rodar o Frontend. Digite os seguintes comandos:
+
+```bash
+npm install
+ng s 
 ```
 
 Front-end estará disponivel na URL: http://localhost:4200
