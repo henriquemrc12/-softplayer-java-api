@@ -3,6 +3,10 @@ Para rodar o Backend. Digite os seguintes comandos:
 
 ```bash
 mvn install
+```
+Entre na pasta "target". E rode o comando:
+
+```bash
 java -jar SoftplayerJavaApi-0.0.1-SNAPSHOT.jar
 ```
 
